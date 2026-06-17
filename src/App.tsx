@@ -25,6 +25,56 @@ import {
 } from 'lucide-react';
 import { faqItems } from './data';
 
+const getCategoryStyle = (category: string) => {
+  switch (category) {
+    case 'delivery':
+      return {
+        badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+        dot: 'bg-cyan-400',
+        border: 'hover:border-cyan-500/30 hover:bg-cyan-500/[0.03] border-white/5',
+        text: 'text-zinc-300 group-hover:text-cyan-300',
+        number: 'text-cyan-400',
+        shadow: 'focus:ring-cyan-500/20 shadow-cyan-950/20',
+        spotlight: 'border-cyan-500/40 bg-cyan-950/10 shadow-lg shadow-cyan-950/30 scale-[1.01]',
+        icon: 'text-cyan-400'
+      };
+    case 'quality':
+      return {
+        badge: 'bg-rose-500/10 text-rose-400 border-rose-500/20',
+        dot: 'bg-rose-400',
+        border: 'hover:border-rose-500/30 hover:bg-rose-500/[0.03] border-white/5',
+        text: 'text-zinc-300 group-hover:text-rose-300',
+        number: 'text-rose-400',
+        shadow: 'focus:ring-rose-500/20 shadow-rose-950/20',
+        spotlight: 'border-rose-500/40 bg-rose-950/10 shadow-lg shadow-rose-950/30 scale-[1.01]',
+        icon: 'text-rose-400'
+      };
+    case 'limits':
+      return {
+        badge: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+        dot: 'bg-amber-400',
+        border: 'hover:border-amber-500/30 hover:bg-amber-500/[0.03] border-white/5',
+        text: 'text-zinc-300 group-hover:text-amber-300',
+        number: 'text-amber-400',
+        shadow: 'focus:ring-amber-500/20 shadow-amber-950/20',
+        spotlight: 'border-amber-500/40 bg-amber-950/10 shadow-lg shadow-amber-950/30 scale-[1.01]',
+        icon: 'text-amber-400'
+      };
+    case 'workflow':
+    default:
+      return {
+        badge: 'bg-violet-500/10 text-violet-400 border-violet-500/20',
+        dot: 'bg-violet-400',
+        border: 'hover:border-violet-500/30 hover:bg-violet-500/[0.03] border-white/5',
+        text: 'text-zinc-300 group-hover:text-violet-300',
+        number: 'text-violet-400',
+        shadow: 'focus:ring-violet-500/20 shadow-violet-950/20',
+        spotlight: 'border-violet-500/40 bg-violet-950/10 shadow-lg shadow-violet-950/30 scale-[1.01]',
+        icon: 'text-violet-400'
+      };
+  }
+};
+
 export default function App() {
   const [activeQuestionId, setActiveQuestionId] = useState<string | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -57,24 +107,45 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0A0A0C] text-zinc-300 font-sans selection:bg-white/20 selection:text-white pb-32">
+    <div className="min-h-screen bg-[#070709] text-zinc-300 font-sans selection:bg-white/20 selection:text-white pb-32 relative overflow-hidden">
       
+      {/* Decorative backdrop background ambient radial glows */}
+      <div className="absolute top-[-10%] left-[-15%] w-[600px] h-[600px] rounded-full bg-indigo-500/10 blur-[130px] pointer-events-none z-0" />
+      <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] rounded-full bg-pink-500/5 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[110px] pointer-events-none z-0" />
+      <div className="absolute bottom-[-10%] right-[-15%] w-[600px] h-[600px] rounded-full bg-amber-500/5 blur-[140px] pointer-events-none z-0" />
+
       {/* HEADER BAR AND BRANDING */}
-      <header className="border-b border-white/5 bg-[#0A0A0C]/95 sticky top-0 z-40 backdrop-blur-md">
+      <header className="border-b border-white/5 bg-[#070709]/90 sticky top-0 z-40 backdrop-blur-md relative">
         <div className="max-w-4xl mx-auto px-4 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             {/* Wave stacked logo from the branding */}
             <svg viewBox="0 0 160 32" className="h-8 text-white shrink-0" fill="currentColor">
               <g transform="translate(0, -2)">
-                <path d="M4 22C10 21 17 14 23 17C28 19 32 22 41 15C36 21 28 22 22 20C17 18 10 22 4 22Z" />
-                <path d="M3 14C9 13 16 6 22 9C27 11 31 14 40 7C35 13 27 14 21 12C16 10 9 14 3 14Z" />
-                <path d="M5 6C11 5 18 -2 24 1C29 3 33 6 42 -1C37 5 29 6 23 4C18 2 11 6 5 6Z" />
+                <path d="M4 22C10 21 17 14 23 17C28 19 32 22 41 15C36 21 28 22 22 20C17 18 10 22 4 22Z" fill="url(#wave-gradient)" />
+                <path d="M3 14C9 13 16 6 22 9C27 11 31 14 40 7C35 13 27 14 21 12C16 10 9 14 3 14Z" fill="url(#wave-gradient-mid)" />
+                <path d="M5 6C11 5 18 -2 24 1C29 3 33 6 42 -1C37 5 29 6 23 4C18 2 11 6 5 6Z" fill="url(#wave-gradient-top)" />
+                
+                <defs>
+                  <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#818CF8" />
+                    <stop offset="100%" stopColor="#EC4899" />
+                  </linearGradient>
+                  <linearGradient id="wave-gradient-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#38BDF8" />
+                    <stop offset="100%" stopColor="#818CF8" />
+                  </linearGradient>
+                  <linearGradient id="wave-gradient-top" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#34D399" />
+                    <stop offset="100%" stopColor="#38BDF8" />
+                  </linearGradient>
+                </defs>
               </g>
               <text x="47" y="20" className="font-sans font-bold text-white text-[16px] tracking-tight">Editoz Club</text>
             </svg>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[10px] bg-white/5 border border-white/10 text-zinc-400 font-mono px-2.5 py-1 rounded-sm uppercase tracking-wider">
+            <span className="text-[10px] bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-mono px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
               Sales Closer Hub
             </span>
           </div>
@@ -82,92 +153,95 @@ export default function App() {
       </header>
 
       {/* MAIN CONTAINER */}
-      <main className="max-w-4xl mx-auto px-4 mt-12 space-y-12">
+      <main className="max-w-4xl mx-auto px-4 mt-12 space-y-12 relative z-10">
 
         {/* HERO HEADER */}
-        <section className="text-center space-y-3 py-6 border-b border-white/10">
+        <section className="text-center space-y-4 py-8 border-b border-white/10">
           <h1 className="text-3xl sm:text-4xl font-light text-white tracking-tight font-display">
-            FAQ for Akash and Kethaka
+            FAQ for <span className="font-extrabold bg-gradient-to-r from-violet-400 via-pink-400 to-cyan-300 bg-clip-text text-transparent drop-shadow-sm">Akash and Kethaka</span>
           </h1>
-          <p className="text-base text-zinc-400 font-light max-w-xl mx-auto font-sans">
-            Video Editing Service Offer
+          <p className="text-sm text-zinc-400 font-light max-w-xl mx-auto font-sans leading-relaxed">
+            Standard and streamlined reference portal for closer transactions. Designed to make high efficiency and prompt offer positioning simple.
           </p>
         </section>
 
         {/* CORE OFFER HIGHLIGHTS */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-[#0C0C0E] border border-white/10 rounded-xl p-6 space-y-3 flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-[#091510] via-[#070B09] to-[#08080A] border border-emerald-500/20 hover:border-emerald-500/40 rounded-xl p-6 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-emerald-950/10 hover:shadow-emerald-950/30 hover:-translate-y-0.5">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <h2 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
-                  Short Form Videos
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <h2 className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono">
+                  Short Form
                 </h2>
               </div>
-              <div className="text-2xl font-bold font-display text-white tracking-tight">
-                $100 <span className="text-xs font-normal text-zinc-400">per video</span>
+              <div className="text-3xl font-bold font-display text-white tracking-tight">
+                $100 <span className="text-xs font-normal text-zinc-400 font-mono">/ video</span>
               </div>
             </div>
-            <p className="text-xs text-zinc-400 font-sans mt-2">
-              Minimum booking is 10 short form videos (60–90 seconds).
+            <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
+              Minimum booking is <span className="text-emerald-300 font-semibold font-mono">10 videos</span>. Quick 60–90 second high-impact formats.
             </p>
           </div>
 
-          <div className="bg-[#0C0C0E] border border-white/10 rounded-xl p-6 space-y-3 flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-[#1C1408] via-[#0D0B0A] to-[#08080A] border border-amber-500/20 hover:border-amber-500/40 rounded-xl p-6 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-amber-950/10 hover:shadow-amber-950/30 hover:-translate-y-0.5">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-[#D39E2F]"></span>
-                <h2 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
-                  Medium Length Videos
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <h2 className="text-xs font-bold text-amber-400 uppercase tracking-widest font-mono">
+                  Medium Length
                 </h2>
               </div>
-              <div className="text-2xl font-bold font-display text-white tracking-tight">
-                $150 <span className="text-xs font-normal text-zinc-400">per video</span>
+              <div className="text-3xl font-bold font-display text-white tracking-tight">
+                $150 <span className="text-xs font-normal text-zinc-400 font-mono">/ video</span>
               </div>
             </div>
-            <p className="text-xs text-zinc-400 font-sans mt-2">
-              Standard rate for 90 seconds to 10 minutes video length.
+            <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
+              Standard rate for videos ranging from <span className="text-amber-300 font-semibold font-mono">90s to 10 mins</span> length.
             </p>
           </div>
 
-          <div className="bg-[#0C0C0E] border border-white/10 rounded-xl p-6 space-y-3 flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-[#09121C] via-[#07090C] to-[#08080A] border border-blue-500/20 hover:border-blue-500/40 rounded-xl p-6 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-blue-950/10 hover:shadow-blue-950/30 hover:-translate-y-0.5">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                <h2 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
-                  Long Form Videos
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse"></span>
+                <h2 className="text-xs font-bold text-blue-400 uppercase tracking-widest font-mono">
+                  Long Form
                 </h2>
               </div>
-              <div className="text-lg font-semibold font-sans text-white tracking-tight">
-                $780 – $1,160 <span className="text-xs font-normal text-zinc-400">/ video</span>
+              <div className="text-3xl font-bold font-display text-white tracking-tight">
+                $780<span className="text-xs font-normal text-zinc-500"> – </span>$1,160 <span className="text-xs font-normal text-zinc-400 font-mono">/ video</span>
               </div>
             </div>
-            <p className="text-xs text-zinc-400 font-sans mt-2">
-              Simple format ($780) or Complex ($1,160) video length. Minimum 1 video.
+            <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
+              Videos over <span className="text-blue-300 font-semibold font-mono">10 mins</span>. Simple format at $780; complex editing package at $1,160.
             </p>
           </div>
         </section>
 
         {/* CENTRAL DIRECTORY MENU */}
         <section className="space-y-4">
-          <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono uppercase tracking-widest">
             <HelpCircle className="h-4 w-4 text-zinc-500" />
             Centralized Question Menu
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {faqItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToQuestion(item.id)}
-                className="text-left text-xs p-4 rounded-sm bg-black/40 border border-white/10 hover:border-white/30 text-zinc-300 hover:text-white transition duration-200 flex items-center justify-between group hover:cursor-pointer"
-              >
-                <span className="font-sans font-medium pr-2">
-                  {item.label}
-                </span>
-                <ChevronRight className="h-3 w-3 text-zinc-650 group-hover:text-white transition-transform group-hover:translate-x-0.5 shrink-0" />
-              </button>
-            ))}
+            {faqItems.map((item) => {
+              const style = getCategoryStyle(item.category);
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToQuestion(item.id)}
+                  className={`text-left text-xs p-4 rounded-lg bg-[#0C0C0E]/50 border transition-all duration-300 group hover:cursor-pointer flex items-center justify-between shadow-sm ${style.border}`}
+                >
+                  <span className={`font-sans font-medium pr-2 transition-colors ${style.text}`}>
+                    {item.label}
+                  </span>
+                  <ChevronRight className={`h-3 w-3 group-hover:translate-x-1 transition-all duration-300 ${style.icon}`} />
+                </button>
+              );
+            })}
           </div>
         </section>
 
@@ -175,20 +249,21 @@ export default function App() {
         <section className="space-y-6 pt-4">
           {faqItems.map((item, idx) => {
             const isSpotlight = activeQuestionId === item.id;
+            const style = getCategoryStyle(item.category);
 
             return (
               <div
                 key={item.id}
                 id={item.id}
-                className={`bg-[#0C0C0E] border rounded-lg p-6 sm:p-8 space-y-6 transition-all duration-400 scroll-mt-28 ${
+                className={`bg-[#0C0C0E]/80 border rounded-xl p-6 sm:p-8 space-y-6 transition-all duration-400 scroll-mt-28 backdrop-blur-sm ${
                   isSpotlight 
-                    ? 'border-white bg-[#0F0F12] shadow-lg shadow-white/5 scale-[1.01]' 
-                    : 'border-white/5'
+                    ? style.spotlight
+                    : 'border-white/5 hover:border-white/10'
                 }`}
               >
                 
                 {/* Visual identification tag */}
-                <span className="inline-block text-[10px] font-mono font-bold text-zinc-400 bg-white/5 px-2.5 py-1 rounded-sm border border-white/5 uppercase tracking-wider">
+                <span className={`inline-block text-[10px] font-mono font-bold px-3 py-1 rounded-full border uppercase tracking-wider ${style.badge}`}>
                   {item.label}
                 </span>
 
@@ -196,7 +271,7 @@ export default function App() {
                 <div className="space-y-4">
                   {/* Question */}
                   <div className="flex gap-3 items-start">
-                    <span className="h-6 w-6 text-[10px] font-mono font-bold bg-white text-black rounded-sm flex items-center justify-center shrink-0">
+                    <span className={`h-6 w-6 text-[10px] font-mono font-bold rounded-md flex items-center justify-center shrink-0 border border-white/10 bg-white/5 ${style.number}`}>
                       Q
                     </span>
                     <h3 className="font-sans text-base sm:text-lg font-medium tracking-tight text-white mt-0.5 leading-snug">
@@ -209,10 +284,10 @@ export default function App() {
 
                   {/* Answer */}
                   <div className="flex gap-3 items-start">
-                    <span className="h-6 w-6 text-[10px] font-mono font-bold bg-white/5 border border-white/5 text-zinc-400 rounded-sm flex items-center justify-center shrink-0">
+                    <span className="h-6 w-6 text-[10px] font-mono font-bold bg-white/5 border border-white/5 text-zinc-500 rounded-md flex items-center justify-center shrink-0">
                       A
                     </span>
-                    <p className="text-zinc-300 text-sm leading-relaxed mt-0.5 whitespace-pre-line font-sans">
+                    <p className="text-zinc-350 text-sm leading-relaxed mt-0.5 whitespace-pre-line font-sans font-normal">
                       {item.answer}
                     </p>
                   </div>
