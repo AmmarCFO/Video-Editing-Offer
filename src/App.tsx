@@ -162,57 +162,108 @@ export default function App() {
         </section>
 
         {/* CORE OFFER HIGHLIGHTS */}
-        <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-gradient-to-br from-[#091510] via-[#070B09] to-[#08080A] border border-emerald-500/20 hover:border-emerald-500/40 rounded-xl p-6 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-emerald-950/10 hover:shadow-emerald-950/30 hover:-translate-y-0.5">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Card 1: Short Form */}
+          <div className="bg-gradient-to-br from-[#091510] via-[#070B09] to-[#08080A] border border-emerald-500/20 hover:border-emerald-500/40 rounded-xl p-5 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-emerald-950/10 hover:shadow-emerald-950/30 hover:-translate-y-0.5">
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <h2 className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono">
-                  Short Form
-                </h2>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <h2 className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest font-mono">
+                    Short Form
+                  </h2>
+                </div>
+                <span className="text-[9px] text-zinc-500 font-mono">60–90 seconds</span>
               </div>
-              <div className="text-3xl font-bold font-display text-white tracking-tight">
-                $100 <span className="text-xs font-normal text-zinc-400 font-mono">/ video</span>
+              <div className="space-y-1">
+                <div className="text-2xl font-bold font-display text-white tracking-tight">
+                  $100 <span className="text-xs font-normal text-zinc-400 font-mono">USD</span>
+                </div>
+                <div className="text-sm font-semibold text-emerald-300/80 font-mono">
+                  $150 <span className="text-[10px] font-normal text-zinc-400">AUD</span>
+                </div>
               </div>
             </div>
-            <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
-              Minimum booking is <span className="text-emerald-300 font-semibold font-mono">10 videos</span>. Quick 60–90 second high-impact formats.
+            <p className="text-[11px] text-zinc-400 font-sans leading-relaxed pt-2 border-t border-white/5">
+              Minimum booking of <span className="text-emerald-300 font-semibold font-mono">10 videos</span>. High-impact short-form edits.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-[#1C1408] via-[#0D0B0A] to-[#08080A] border border-amber-500/20 hover:border-amber-500/40 rounded-xl p-6 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-amber-950/10 hover:shadow-amber-950/30 hover:-translate-y-0.5">
+          {/* Card 2: Long Form < 15 mins */}
+          <div className="bg-gradient-to-br from-[#1C1408] via-[#0D0B0A] to-[#08080A] border border-amber-500/20 hover:border-amber-500/40 rounded-xl p-5 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-amber-950/10 hover:shadow-amber-950/30 hover:-translate-y-0.5">
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-                <h2 className="text-xs font-bold text-amber-400 uppercase tracking-widest font-mono">
-                  Medium Length
-                </h2>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                  <h2 className="text-[10px] font-bold text-amber-400 uppercase tracking-widest font-mono">
+                    Long Form
+                  </h2>
+                </div>
+                <span className="text-[9px] text-zinc-500 font-mono">Up to 15m</span>
               </div>
-              <div className="text-3xl font-bold font-display text-white tracking-tight">
-                $150 <span className="text-xs font-normal text-zinc-400 font-mono">/ video</span>
+              <div className="space-y-1">
+                <div className="text-2xl font-bold font-display text-white tracking-tight">
+                  $650 <span className="text-xs font-normal text-zinc-400 font-mono">USD</span>
+                </div>
+                <div className="text-sm font-semibold text-amber-300/80 font-mono">
+                  $1,000 <span className="text-[10px] font-normal text-zinc-400">AUD</span>
+                </div>
               </div>
             </div>
-            <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
-              Minimum booking is <span className="text-amber-300 font-semibold font-mono">10 videos</span>. Standard rate for videos ranging from <span className="text-amber-300 font-semibold font-mono">90s to 10 mins</span> length.
+            <p className="text-[11px] text-zinc-400 font-sans leading-relaxed pt-2 border-t border-white/5">
+              <span className="text-amber-300 font-medium font-mono">Simple edits only</span>. No minimums—even 1 video is perfectly fine.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-[#09121C] via-[#07090C] to-[#08080A] border border-blue-500/20 hover:border-blue-500/40 rounded-xl p-6 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-blue-950/10 hover:shadow-blue-950/30 hover:-translate-y-0.5">
+          {/* Card 3: Long Form 15-60 mins */}
+          <div className="bg-gradient-to-br from-[#09121C] via-[#07090C] to-[#08080A] border border-blue-500/20 hover:border-blue-500/40 rounded-xl p-5 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-blue-950/10 hover:shadow-blue-950/30 hover:-translate-y-0.5">
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse"></span>
-                <h2 className="text-xs font-bold text-blue-400 uppercase tracking-widest font-mono">
-                  Long Form
-                </h2>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                  <h2 className="text-[10px] font-bold text-blue-400 uppercase tracking-widest font-mono">
+                    Long Form
+                  </h2>
+                </div>
+                <span className="text-[9px] text-zinc-500 font-mono">15–60 mins</span>
               </div>
-              <div className="text-3xl font-bold font-display text-white tracking-tight">
-                $780<span className="text-xs font-normal text-zinc-500"> – </span>$1,160 <span className="text-xs font-normal text-zinc-400 font-mono">/ video</span>
+              <div className="space-y-1">
+                <div className="text-2xl font-bold font-display text-white tracking-tight">
+                  $1,100 <span className="text-xs font-normal text-zinc-400 font-mono">USD</span>
+                </div>
+                <div className="text-sm font-semibold text-blue-300/80 font-mono">
+                  $1,650 <span className="text-[10px] font-normal text-zinc-400">AUD</span>
+                </div>
               </div>
             </div>
-            <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
-              Videos over <span className="text-blue-300 font-semibold font-mono">10 mins</span>.<br />
-              Simple edits: $780<br />
-              Advanced edits: $1,160
+            <p className="text-[11px] text-zinc-400 font-sans leading-relaxed pt-2 border-t border-white/5">
+              <span className="text-blue-300 font-medium font-mono">Advanced edits</span> start from this tier. Can do even 1 video.
+            </p>
+          </div>
+
+          {/* Card 4: Long Form 60+ mins */}
+          <div className="bg-gradient-to-br from-[#12091C] via-[#09070C] to-[#08080A] border border-purple-500/20 hover:border-purple-500/40 rounded-xl p-5 space-y-3 flex flex-col justify-between transition-all duration-300 shadow-lg shadow-purple-950/10 hover:shadow-purple-950/30 hover:-translate-y-0.5">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+                  <h2 className="text-[10px] font-bold text-purple-400 uppercase tracking-widest font-mono">
+                    Long Form
+                  </h2>
+                </div>
+                <span className="text-[9px] text-zinc-500 font-mono">60+ mins</span>
+              </div>
+              <div className="space-y-1">
+                <div className="text-2xl font-bold font-display text-white tracking-tight">
+                  $1,600 <span className="text-xs font-normal text-zinc-400 font-mono">USD</span>
+                </div>
+                <div className="text-sm font-semibold text-purple-300/80 font-mono">
+                  $2,500 <span className="text-[10px] font-normal text-zinc-400">AUD</span>
+                </div>
+              </div>
+            </div>
+            <p className="text-[11px] text-zinc-400 font-sans leading-relaxed pt-2 border-t border-white/5">
+              Projects exceeding standard scope may require a custom quote. Can do 1 video.
             </p>
           </div>
         </section>
@@ -359,31 +410,26 @@ export default function App() {
                       <Layers className="h-3.5 w-3.5" />
                       All Video Types & Rates
                     </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center font-mono text-[10px]">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 text-center font-mono text-[10px]">
                       <div className="bg-white/5 p-2 rounded border border-white/5">
-                        <span className="text-zinc-500 block uppercase text-[8px]">Short Form (Lofi)</span>
-                        <strong className="text-white block mt-1">$100/vid</strong>
-                        <span className="text-zinc-500 block text-[8px] mt-0.5">Min 10 videos</span>
+                        <span className="text-zinc-500 block uppercase text-[8px]">Short Form</span>
+                        <strong className="text-white block mt-1">$100 USD / $150 AUD</strong>
+                        <span className="text-zinc-500 block text-[8px] mt-0.5">Min 10 videos (60–90s)</span>
                       </div>
                       <div className="bg-white/5 p-2 rounded border border-white/5">
-                        <span className="text-zinc-500 block uppercase text-[8px]">Short Form (HiFi)</span>
-                        <strong className="text-white block mt-1">$100/vid</strong>
-                        <span className="text-zinc-500 block text-[8px] mt-0.5">Min 10 videos</span>
+                        <span className="text-zinc-500 block uppercase text-[8px]">Long Form (&lt;15m)</span>
+                        <strong className="text-white block mt-1">$650 USD / $1,000 AUD</strong>
+                        <span className="text-zinc-500 block text-[8px] mt-0.5">Simple edit only</span>
                       </div>
-                      <div className="bg-white/5 p-2 rounded border border-amber-500/20">
-                        <span className="text-amber-400 block uppercase text-[8px]">Medium Length</span>
-                        <strong className="text-amber-300 block mt-1">$150/vid</strong>
-                        <span className="text-zinc-500 block text-[8px] mt-0.5">Min 10 videos</span>
+                      <div className="bg-white/5 p-2 rounded border border-white/5">
+                        <span className="text-zinc-500 block uppercase text-[8px]">Long Form (15-60m)</span>
+                        <strong className="text-white block mt-1">$1,100 USD / $1,650 AUD</strong>
+                        <span className="text-zinc-500 block text-[8px] mt-0.5">Advanced edits start here</span>
                       </div>
-                      <div className="bg-white/10 p-2 rounded border border-white/10">
-                        <span className="text-zinc-300 block uppercase text-[8px]">Long Form (Simple)</span>
-                        <strong className="text-emerald-400 block mt-1">$780/vid</strong>
-                        <span className="text-zinc-400 block text-[8px] mt-0.5">Minimum 1 video</span>
-                      </div>
-                      <div className="bg-white/10 p-2 rounded border border-white/10">
-                        <span className="text-zinc-300 block uppercase text-[8px]">Long Form (Complex)</span>
-                        <strong className="text-emerald-400 block mt-1">$1,160/vid</strong>
-                        <span className="text-zinc-400 block text-[8px] mt-0.5">Minimum 1 video</span>
+                      <div className="bg-white/5 p-2 rounded border border-white/5">
+                        <span className="text-zinc-500 block uppercase text-[8px]">Long Form (60+m)</span>
+                        <strong className="text-white block mt-1">$1,600 USD / $2,500 AUD</strong>
+                        <span className="text-zinc-[450] block text-[8px] mt-0.5">Projects exceeding standard scope (Can do 1)</span>
                       </div>
                     </div>
                   </div>
@@ -420,21 +466,26 @@ export default function App() {
                       <Video className="h-3.5 w-3.5" />
                       Video Length Metrics
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 text-center gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2">
                       <div className="bg-white/5 p-3 rounded border border-white/5">
                         <span className="text-zinc-400 block uppercase text-[8px]">Short-Form range</span>
                         <strong className="text-white text-sm block mt-1">60s – 90s</strong>
-                        <span className="text-zinc-400 block text-[9px] mt-0.5">$100 / video</span>
-                      </div>
-                      <div className="bg-white/10 p-3 rounded border border-white/10">
-                        <span className="text-zinc-300 block uppercase text-[8px]">Medium-length range</span>
-                        <strong className="text-white text-sm block mt-1">90s to 10 mins</strong>
-                        <span className="text-zinc-400 block text-[9px] mt-0.5">$150 / video</span>
+                        <span className="text-zinc-400 block text-[9px] mt-0.5">$100 USD / $150 AUD</span>
                       </div>
                       <div className="bg-white/5 p-3 rounded border border-white/5">
-                        <span className="text-zinc-400 block uppercase text-[8px]">Long-Form range</span>
-                        <strong className="text-white text-sm block mt-1">10 mins to 1 hour +</strong>
-                        <span className="text-zinc-400 block text-[9px] mt-0.5">Simple: $780 / Advanced: $1,160</span>
+                        <span className="text-zinc-400 block uppercase text-[8px]">Long-Form (Up to 15m)</span>
+                        <strong className="text-white text-sm block mt-1">Up to 15 mins</strong>
+                        <span className="text-zinc-400 block text-[9px] mt-0.5">$650 USD / $1,000 AUD</span>
+                      </div>
+                      <div className="bg-white/5 p-3 rounded border border-white/5">
+                        <span className="text-zinc-400 block uppercase text-[8px]">Long-Form (15-60m)</span>
+                        <strong className="text-white text-sm block mt-1">15 to 60 mins</strong>
+                        <span className="text-zinc-400 block text-[9px] mt-0.5">$1,100 USD / $1,650 AUD</span>
+                      </div>
+                      <div className="bg-white/5 p-3 rounded border border-white/5">
+                        <span className="text-zinc-400 block uppercase text-[8px]">Long-Form (60+m)</span>
+                        <strong className="text-white text-sm block mt-1">60 mins +</strong>
+                        <span className="text-zinc-400 block text-[9px] mt-0.5">$1,600 USD / $2,500 AUD</span>
                       </div>
                     </div>
                   </div>

@@ -11,7 +11,7 @@ export const faqItems: FAQItem[] = [
     id: "turnaround-times",
     label: "01. Delivery & Turnaround",
     question: "What are the video turnaround times?",
-    answer: "Our turnaround times are structured as follows:\n• First Draft: Within 48 hours\n• Revisions: 16 – 24 hours\n• Fastest Possible Delivery: Less than 5 hours\n• Average Turnaround: 24 hours\n\nThe above timelines are for short form videos (60–90 seconds). Video turnaround times to be decided based on complexity of the edit for Medium-length (90s to 10 mins) and long form videos (10 mins to 1 hour +).",
+    answer: "Our turnaround times are structured as follows:\n• First Draft: Within 48 hours\n• Revisions: 16 – 24 hours\n• Fastest Possible Delivery: Less than 5 hours\n• Average Turnaround: 24 hours\n\nThe above timelines are for short form videos (60–90 seconds). Video turnaround times to be decided based on complexity of the edit for long form videos (up to 15 mins, 15–60 mins, and 60+ mins).",
     category: "delivery"
   },
   {
@@ -32,7 +32,7 @@ export const faqItems: FAQItem[] = [
     id: "rates-and-scope",
     label: "04. Editing Scope & Rates",
     question: "What are the rates for video editing services?",
-    answer: "Our standard rates are:\n• Short Form (Lofi): $100 per video (minimum booking of 10 videos)\n• Short Form (HiFi): $100 per video (minimum booking of 10 videos)\n• Medium Length: $150 per video (minimum booking of 10 videos)\n• Long Form (Simple): $780 per video (can do even 1 video, no worries)\n• Long Form (Complex): $1,160 per video (can do even 1 video, no worries)",
+    answer: "Our standard rates are:\n• Short Form (60-90s): $100 USD or $150 AUD per video (minimum booking of 10 videos)\n• Long Form (Up to 15 mins - Simple edit only): $650 USD or $1,000 AUD per video (can do even 1 video, no worries)\n• Long Form (15-60 mins - Advanced edits start from this): $1,100 USD or $1,650 AUD per video (can do even 1 video, no worries)\n• Long Form (60+ mins): $1,600 USD or $2,500 AUD per video (projects exceeding standard scope may require custom quote; can do even 1 video, no worries)",
     category: "pricing"
   },
   {
@@ -46,7 +46,7 @@ export const faqItems: FAQItem[] = [
     id: "video-length-def",
     label: "06. Video Length",
     question: "How do you define video length?",
-    answer: "We define video lengths as follows:\n• Short-form: between 60 to 90 seconds ($100 per video)\n• Medium-length: 90 seconds to 10 minutes ($150 per video)\n• Long-form: 10 minutes to 1 hour + (Simple edits: $780 / Advanced edits: $1,160)",
+    answer: "We define video lengths as follows:\n• Short Form: between 60 to 90 seconds ($100 USD or $150 AUD)\n• Long Form (Up to 15 mins): Simple edit only ($650 USD or $1,000 AUD)\n• Long Form (15 to 60 mins): Advanced edits start from this ($1,100 USD or $1,650 AUD)\n• Long Form (60+ mins): Exceeding standard scope ($1,600 USD or $2,500 AUD; custom quotes apply for complex needs)",
     category: "limits"
   },
   {
