@@ -144,11 +144,7 @@ export default function App() {
               <text x="47" y="20" className="font-sans font-bold text-white text-[16px] tracking-tight">Editoz Club</text>
             </svg>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-mono px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
-              Sales Closer Hub
-            </span>
-          </div>
+
         </div>
       </header>
 
@@ -161,7 +157,7 @@ export default function App() {
             FAQ for <span className="font-extrabold bg-gradient-to-r from-violet-400 via-pink-400 to-cyan-300 bg-clip-text text-transparent drop-shadow-sm">Akash and Kethaka</span>
           </h1>
           <p className="text-sm text-zinc-400 font-light max-w-xl mx-auto font-sans leading-relaxed">
-            Standard and streamlined reference portal for closer transactions. Designed to make high efficiency and prompt offer positioning simple.
+            Everything you need to know about the video editing offer.
           </p>
         </section>
 
@@ -214,7 +210,9 @@ export default function App() {
               </div>
             </div>
             <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
-              Videos over <span className="text-blue-300 font-semibold font-mono">10 mins</span>. Simple format at $780; complex editing package at $1,160.
+              Videos over <span className="text-blue-300 font-semibold font-mono">10 mins</span>.<br />
+              Simple edits: $780<br />
+              Advanced edits: $1,160
             </p>
           </div>
         </section>
@@ -223,7 +221,7 @@ export default function App() {
         <section className="space-y-4">
           <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono uppercase tracking-widest">
             <HelpCircle className="h-4 w-4 text-zinc-500" />
-            Centralized Question Menu
+            Questions Menu
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -359,7 +357,7 @@ export default function App() {
                   <div className="bg-black/30 border border-white/5 p-4 rounded-sm space-y-4">
                     <div className="flex items-center gap-1.5 font-mono text-zinc-500 uppercase tracking-widest text-[9px] mb-2">
                       <Layers className="h-3.5 w-3.5" />
-                      Service Type Rate Matrix
+                      All Video Types & Rates
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-mono text-[10px]">
                       <div className="bg-white/5 p-2 rounded border border-white/5">
@@ -391,7 +389,7 @@ export default function App() {
                   <div className="bg-black/30 border border-white/5 p-4 rounded-sm space-y-3">
                     <div className="flex items-center gap-1.5 font-mono text-zinc-500 uppercase tracking-widest text-[9px]">
                       <FolderOpen className="h-3.5 w-3.5" />
-                      Core Deliverables Google Drive Checklist
+                      What We Need From The Client
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-[10px]">
                       <div className="p-2 border border-white/5 rounded bg-white/[0.02] flex items-center gap-2">
@@ -437,8 +435,7 @@ export default function App() {
 
                 {/* 08. submission limits (50 clips list) */}
                 {item.id === "asset-submission" && (
-                  <div className="bg-black/30 border border-white/5 p-4 rounded-sm text-center font-mono text-[10px] space-y-2">
-                    <span className="text-zinc-400 uppercase tracking-widest text-[8px]">Raw-to-Edit funnel capability</span>
+                  <div className="bg-black/30 border border-white/5 p-4 rounded-sm text-center font-mono text-[10px]">
                     <div className="flex justify-center items-center gap-6">
                       <span className="bg-white/5 px-3 py-1.5 text-zinc-400 rounded-sm border border-white/5">Submit 50 Raw Clips</span>
                       <span className="text-zinc-500 font-sans">➜</span>
@@ -452,7 +449,7 @@ export default function App() {
                   <div className="bg-black/30 border border-white/5 p-4 rounded-sm space-y-3 font-mono text-[9px]">
                     <div className="flex items-center gap-1.5 text-zinc-500 uppercase tracking-widest text-[9px]">
                       <Settings className="h-3.5 w-3.5" />
-                      5-Step Sequential Workflow Flowchart
+                      5 step video editing workflow
                     </div>
                     <div className="grid grid-cols-5 gap-2 text-center text-white">
                       <div className="bg-white/5 p-2 rounded-sm border border-white/5">
@@ -481,18 +478,9 @@ export default function App() {
 
                 {/* 11. Upfront investment money back check */}
                 {item.id === "upfront-invest-rule" && (
-                  <div className="bg-black/30 border border-white/5 p-4 rounded-sm flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px]">
-                    <div className="space-y-1 text-center sm:text-left">
-                      <div className="flex items-center justify-center sm:justify-start gap-1.5 text-zinc-500 uppercase tracking-widest text-[9px]">
-                        <CreditCard className="h-3.5 w-3.5" />
-                        Upfront Protection Period
-                      </div>
-                      <p className="text-xs text-zinc-400 font-sans leading-relaxed">
-                        Full upfront payment secures dedicated editor calendar slots. Includes 1-week tryout period.
-                      </p>
-                    </div>
-                    <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-2.5 rounded-sm font-bold uppercase tracking-wider text-center flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4" />
+                  <div className="bg-black/30 border border-white/5 p-4 rounded-xl flex items-center justify-center gap-4">
+                    <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-2.5 rounded-lg font-bold uppercase tracking-wider text-center flex items-center justify-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-emerald-400 animate-pulse" />
                       100% 1-Week Trial Money-Back Guarantee
                     </div>
                   </div>
@@ -503,7 +491,7 @@ export default function App() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-1.5 font-mono text-zinc-500 uppercase tracking-widest text-[9px]">
                       <Slack className="h-3.5 w-3.5 text-white" />
-                      Interactive Slack Thread Workspace Simulation
+                      What the Slack convo would look like
                     </div>
                     
                     {/* Simulated Slack Interface */}

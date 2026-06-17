@@ -25,7 +25,7 @@ export const faqItems: FAQItem[] = [
     id: "revision-counts",
     label: "03. Revisions Definition",
     question: "What counts as a revision?",
-    answer: "Any change requested by the client after receiving a draft is counted as a revision.",
+    answer: "Any change requested by the client after receiving a draft is counted as a revision. We offer unlimited revisions.",
     category: "revisions"
   },
   {
