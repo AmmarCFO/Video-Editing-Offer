@@ -32,7 +32,7 @@ export const faqItems: FAQItem[] = [
     id: "rates-and-scope",
     label: "04. Editing Scope & Rates",
     question: "What are the rates for video editing services?",
-    answer: "Our standard rates are:\n• Short Form (Lofi): $100 per video (minimum booking of 10 videos)\n• Short Form (HiFi): $100 per video (minimum booking of 10 videos)\n• Long Form (Simple): $780 per video (can do even 1 video, no worries)\n• Long Form (Complex): $1,160 per video (can do even 1 video, no worries)",
+    answer: "Our standard rates are:\n• Short Form (Lofi): $100 per video (minimum booking of 10 videos)\n• Short Form (HiFi): $100 per video (minimum booking of 10 videos)\n• Medium Length: $150 per video (minimum booking of 10 videos)\n• Long Form (Simple): $780 per video (can do even 1 video, no worries)\n• Long Form (Complex): $1,160 per video (can do even 1 video, no worries)",
     category: "pricing"
   },
   {
@@ -46,7 +46,7 @@ export const faqItems: FAQItem[] = [
     id: "video-length-def",
     label: "06. Video Length",
     question: "How do you define video length?",
-    answer: "We define video lengths as follows:\n• Short-form: between 60 to 90 seconds\n• Medium-length: 90 seconds to 10 minutes ($150 per video)\n• Long-form: 10 minutes to 1 hour +",
+    answer: "We define video lengths as follows:\n• Short-form: between 60 to 90 seconds ($100 per video)\n• Medium-length: 90 seconds to 10 minutes ($150 per video)\n• Long-form: 10 minutes to 1 hour + (Simple edits: $780 / Advanced edits: $1,160)",
     category: "limits"
   },
   {

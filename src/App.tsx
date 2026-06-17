@@ -193,7 +193,7 @@ export default function App() {
               </div>
             </div>
             <p className="text-xs text-zinc-400 font-sans mt-3 leading-relaxed">
-              Standard rate for videos ranging from <span className="text-amber-300 font-semibold font-mono">90s to 10 mins</span> length.
+              Minimum booking is <span className="text-amber-300 font-semibold font-mono">10 videos</span>. Standard rate for videos ranging from <span className="text-amber-300 font-semibold font-mono">90s to 10 mins</span> length.
             </p>
           </div>
 
@@ -359,16 +359,21 @@ export default function App() {
                       <Layers className="h-3.5 w-3.5" />
                       All Video Types & Rates
                     </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-mono text-[10px]">
+                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center font-mono text-[10px]">
                       <div className="bg-white/5 p-2 rounded border border-white/5">
                         <span className="text-zinc-500 block uppercase text-[8px]">Short Form (Lofi)</span>
                         <strong className="text-white block mt-1">$100/vid</strong>
-                        <span className="text-zinc-550 block text-[8px] mt-0.5">Min 10 videos</span>
+                        <span className="text-zinc-500 block text-[8px] mt-0.5">Min 10 videos</span>
                       </div>
                       <div className="bg-white/5 p-2 rounded border border-white/5">
                         <span className="text-zinc-500 block uppercase text-[8px]">Short Form (HiFi)</span>
                         <strong className="text-white block mt-1">$100/vid</strong>
-                        <span className="text-zinc-550 block text-[8px] mt-0.5">Min 10 videos</span>
+                        <span className="text-zinc-500 block text-[8px] mt-0.5">Min 10 videos</span>
+                      </div>
+                      <div className="bg-white/5 p-2 rounded border border-amber-500/20">
+                        <span className="text-amber-400 block uppercase text-[8px]">Medium Length</span>
+                        <strong className="text-amber-300 block mt-1">$150/vid</strong>
+                        <span className="text-zinc-500 block text-[8px] mt-0.5">Min 10 videos</span>
                       </div>
                       <div className="bg-white/10 p-2 rounded border border-white/10">
                         <span className="text-zinc-300 block uppercase text-[8px]">Long Form (Simple)</span>
@@ -419,6 +424,7 @@ export default function App() {
                       <div className="bg-white/5 p-3 rounded border border-white/5">
                         <span className="text-zinc-400 block uppercase text-[8px]">Short-Form range</span>
                         <strong className="text-white text-sm block mt-1">60s – 90s</strong>
+                        <span className="text-zinc-400 block text-[9px] mt-0.5">$100 / video</span>
                       </div>
                       <div className="bg-white/10 p-3 rounded border border-white/10">
                         <span className="text-zinc-300 block uppercase text-[8px]">Medium-length range</span>
@@ -428,6 +434,7 @@ export default function App() {
                       <div className="bg-white/5 p-3 rounded border border-white/5">
                         <span className="text-zinc-400 block uppercase text-[8px]">Long-Form range</span>
                         <strong className="text-white text-sm block mt-1">10 mins to 1 hour +</strong>
+                        <span className="text-zinc-400 block text-[9px] mt-0.5">Simple: $780 / Advanced: $1,160</span>
                       </div>
                     </div>
                   </div>
