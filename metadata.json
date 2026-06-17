@@ -1,0 +1,6 @@
+{
+  "name": "Editoz Club Sales FAQ",
+  "description": "Simplified single-page sales FAQ and alignment reference for Editoz Club.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
